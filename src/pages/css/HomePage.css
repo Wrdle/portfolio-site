@@ -1,0 +1,43 @@
+.header {
+    height: 100vh;
+    width: 100%;
+    background-color: #23272A; 
+    display: block;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.header-main {
+    position: relative;
+    top: 49%;
+    transform: translateY(-51%);
+}
+
+.header-main h1 {
+    font-weight: 700;
+    font-size: 65px;
+}
+.header-main p {
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.header-main .main-flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-text {
+    flex-basis: 50%;
+    width: 100%;
+}
+
+.flex-typewriter {
+    flex-basis: 425px;
+    align-self: flex-end;
+}

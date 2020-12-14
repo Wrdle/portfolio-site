@@ -1,0 +1,55 @@
+.custom-nav {
+    position: fixed !important;
+    width: 100% !important;
+    height: 85px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    align-items: center !important;
+}
+
+.transparent {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+.not-transparent {
+    background-color: #23272A !important;
+}
+
+.custom-brand {
+    font-size: 36px !important;
+    font-weight: 800;
+}
+
+@-webkit-keyframes flash {
+    0% {
+      opacity: 0; }
+    50% {
+      opacity: 1; } }
+  
+  @-moz-keyframes flash {
+    0% {
+      opacity: 0; }
+    50% {
+      opacity: 1; } }
+  
+  @keyframes flash {
+    0% {
+      opacity: 0; }
+    50% {
+      opacity: 1; } }
+
+  
+  .underscore {
+    animation: flash 0.8s alternate infinite;
+  }
+
+.social-icon {
+    font-size: 25px;
+    color: #BDC9C0;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: white;
+}
+
