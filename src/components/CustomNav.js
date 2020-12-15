@@ -3,12 +3,9 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
     NavLink,
-    NavbarText,
-    Container
 } from 'reactstrap';
 import { AiFillGithub } from 'react-icons/ai';
 import { IoLogoLinkedin } from 'react-icons/io';
