@@ -1,3 +1,5 @@
+import CustomNav from "../components/CustomNav";
+
 function PhotographyPage() {
     return (
         <div>
