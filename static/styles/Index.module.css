@@ -1,4 +1,4 @@
-.header {
+.Header {
     height: 100vh;
     width: 100%;
     background-color: #23272A; 
@@ -7,22 +7,22 @@
     font-family: 'Montserrat';
 }
 
-.header-main {
+.Header_Main {
     position: relative;
-    top: 49%;
-    transform: translateY(-51%);
+    top: 45%;
+    transform: translateY(-55%);
 }
 
-.header-main h1 {
+.Header_Main h1 {
     font-weight: 700;
     font-size: 65px;
 }
-.header-main p {
+.Header_Main p {
     font-weight: 200;
     font-size: 20px;
 }
 
-.header-main .main-flex {
+.Header_Main .Main_Flex {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -32,12 +32,12 @@
     margin-right: auto;
 }
 
-.flex-text {
-    flex-basis: 50%;
+.Flex_Text {
+    flex-basis: 45%;
     width: 100%;
 }
 
-.flex-typewriter {
-    flex-basis: 425px;
+.Flex_Typewriter {
+    flex-basis: 420px;
     align-self: flex-end;
 }

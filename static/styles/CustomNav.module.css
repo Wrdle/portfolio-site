@@ -1,10 +1,15 @@
-.custom-nav {
-    position: fixed !important;
+.test {
+  font-size: 40;
+  font-style: italic;
+}
+
+.CustomNav {
     width: 100% !important;
     height: 85px;
     font-family: 'Montserrat';
     font-size: 18px;
     align-items: center !important;
+    background-color: #23272a !important;
 }
 
 .transparent {
@@ -15,7 +20,7 @@
     background-color: #23272A !important;
 }
 
-.custom-brand {
+.CustomBrand {
     font-size: 36px !important;
     font-weight: 800;
 }
@@ -43,13 +48,13 @@
     animation: flash 0.8s alternate infinite;
   }
 
-.social-icon {
+.social_icon {
     font-size: 25px;
     color: #BDC9C0;
     transition: 0.3s;
 }
 
-.social-icon:hover {
+.social_icon:hover {
     color: white;
 }
 
