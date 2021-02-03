@@ -28,7 +28,7 @@ function TypingAnimation() {
                 <br></br><span className="property-highlight">⠀⠀⠀⠀name</span>: <span className="string-highlight">"Matthew D'Agostino"</span>,
                 <br></br><span className="property-highlight">⠀⠀⠀⠀type</span>: <span className="string-highlight">"CS Student"</span>,
                 <br></br><span className="property-highlight">⠀⠀⠀⠀location</span>: <span className="string-highlight">"Brisbane, Australia"</span>,
-                <br></br><span className="property-highlight">⠀⠀⠀⠀skills</span>:[<span className="string-highlight">"Full Stack Dev"</span>,
+                <br></br><span className="property-highlight">⠀⠀⠀⠀skills</span>:[<span className="string-highlight">"Software Engineer"</span>,
                 <br></br><span className="string-highlight">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"Teamwork"</span>,
                 <br></br><span className="string-highlight">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"Communication"</span>]
             <br></br><span>{'}'};</span></div>
