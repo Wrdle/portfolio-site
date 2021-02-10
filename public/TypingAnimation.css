@@ -21,6 +21,20 @@
     #typewriter:after {
       content: "|";
       animation: blink 500ms linear infinite alternate; }
+
+  @media screen and (max-width: 600px) {
+    #typewriter {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    #typewriter {
+      font-size: 12px;
+      width: 100%;
+    }
+  }
   
   @-webkit-keyframes blink {
     0% {

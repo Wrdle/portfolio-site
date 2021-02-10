@@ -41,3 +41,26 @@
     flex-basis: 420px;
     align-self: flex-end;
 }
+
+@media screen and (max-width: 600px) {
+    .Header_Main .Main_Flex {
+        display: block;
+    }
+
+    .Header_Main h1 {
+        font-size: 40px;
+    }
+
+    .Header_Main p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .Header_Main h1 {
+        font-size: 35px;
+    }
+    .Header_Main p {
+        font-size: 16px;
+    }
+}

@@ -13,7 +13,7 @@ const CustomNav = (props) => {
             <Navbar className={NavStyles.CustomNav} variant="dark" bg="dark" expand="lg" sticky="top">
                 <Navbar.Brand className={NavStyles.CustomBrand} href="#home">mattdag<span className={NavStyles.underscore}>_</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbarnav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse className={NavStyles.NotTransparent}>
                     <Nav className="mr-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#link">Projects</Nav.Link>
