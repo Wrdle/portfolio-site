@@ -24,3 +24,7 @@ yarn-error.log*
 
 /.next
 /.vscode
+
+/out
+
+debug.log
