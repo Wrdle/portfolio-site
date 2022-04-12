@@ -16,7 +16,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Hi I'm Matt D'Agostino  and this is my portfolio website."
+          content="Hi! I'm Matt D'Agostino and this is my portfolio website."
           key="description"
         />
       </Head>
