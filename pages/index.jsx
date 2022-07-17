@@ -1,27 +1,15 @@
 import Head from "next/head";
 
-import CustomNav from "../components/CustomNav";
+import { Navbar } from "../components/Navbar";
 import TypingAnimation from "../components/TypingAnimation";
 import IndexStyles from "../static/styles/Index.module.css";
 
 export default function Home() {
   return (
     <div className={IndexStyles.Home}>
-      <Head>
-        <title>Matthew D'Agostino Portfolio</title>
-        <meta
-          property="og:title"
-          content="Matthew D'Agostino Portfolio Website"
-          key="title"
-        />
-        <meta
-          property="og:description"
-          content="Hi! I'm Matt D'Agostino and this is my portfolio website."
-          key="description"
-        />
-      </Head>
+      <HtmlHead />
       <div className={IndexStyles.Header}>
-        <CustomNav></CustomNav>
+        <Navbar></Navbar>
         <div className={IndexStyles.Header_Main}>
           <div className={IndexStyles.Main_Flex}>
             <div className={IndexStyles.Flex_Text}>
@@ -39,5 +27,23 @@ export default function Home() {
         </div>
       </div>
     </div>
+  );
+}
+
+function HtmlHead() {
+  return (
+    <Head>
+      <title>Matthew D'Agostino Portfolio</title>
+      <meta
+        property="og:title"
+        content="Matthew D'Agostino Portfolio Website"
+        key="title"
+      />
+      <meta
+        property="og:description"
+        content="Hi! I'm Matt D'Agostino and this is my portfolio website."
+        key="description"
+      />
+    </Head>
   );
 }
