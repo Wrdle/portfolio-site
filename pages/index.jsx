@@ -1,8 +1,8 @@
 import Head from "next/head";
 
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "/components/Navbar";
 import TypingAnimation from "../components/TypingAnimation";
-import IndexStyles from "../static/styles/Index.module.css";
+import IndexStyles from "/styles/Index.module.css";
 
 export default function Home() {
   return (

@@ -1,21 +1,3 @@
-.test {
-  font-size: 40;
-  font-style: italic;
-}
-
-.CustomNav {
-  width: 100% !important;
-  height: 85px;
-  font-family: "Montserrat";
-  font-size: 18px;
-  align-items: center !important;
-  background-color: #23272a !important;
-}
-
-.NotTransparent {
-  background-color: #23272a !important;
-}
-
 .CustomBrand {
   font-size: 36px !important;
   font-weight: 800;
@@ -50,8 +32,4 @@
 
 .underscore {
   animation: flash 0.8s alternate infinite;
-}
-
-.social_icon:hover {
-  color: white;
 }

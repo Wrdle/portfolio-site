@@ -7,7 +7,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { IoLogoLinkedin } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import NavStyles from "../static/styles/CustomNav.module.css";
+import NavStyles from "/styles/Navbar.module.css";
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
