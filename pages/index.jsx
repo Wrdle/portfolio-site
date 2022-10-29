@@ -8,15 +8,15 @@ export default function Home() {
   return (
     <div className={IndexStyles.Home}>
       <HtmlHead />
+      <Navbar />
       <div className={IndexStyles.Header}>
-        <Navbar></Navbar>
         <div className={IndexStyles.Header_Main}>
           <div className={IndexStyles.Main_Flex}>
             <div className={IndexStyles.Flex_Text}>
               <h1>Hi, I'm Matt.</h1>
               <p>
                 I'm Matthew D'Agostino, a Software Engineer currently working at
-                Suncorp Bank. I have a passion for programming and all things
+                Suncorp Group. I have a passion for programming and all things
                 tech.
               </p>
             </div>
@@ -33,10 +33,10 @@ export default function Home() {
 function HtmlHead() {
   return (
     <Head>
-      <title>Matthew D'Agostino Portfolio</title>
+      <title>Matt D'Agostino</title>
       <meta
         property="og:title"
-        content="Matthew D'Agostino Portfolio Website"
+        content="Matt D'Agostino Portfolio Website"
         key="title"
       />
       <meta

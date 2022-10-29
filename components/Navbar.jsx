@@ -9,47 +9,45 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import NavStyles from "/styles/Navbar.module.css";
 
-export const Navbar = () => {
+export const Navbar = (darkMode) => {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {
     setActive(!active);
   };
-
   return (
-    <>
-      <nav className="flex items-center flex-wrap p-3 navbar navbar-expand-lg">
-        <Logo />
-        <HamburgerMenuIcon handleClick={handleClick} />
-        <div
-          className={`${
-            active ? "" : "hidden"
-          }   w-full lg:inline-flex lg:flex-grow lg:w-auto transition`}
-        >
-          <div className="text-lg lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
-            <NavLink text="Home" href="/"></NavLink>
-            <NavLink text="Projects" href="/"></NavLink>
-            <NavLink text="Photography" href="/"></NavLink>
-            <NavLink text="Blog" href="/"></NavLink>
-            <div className="inline-flex flex-row mr-auto w-auto w-full items-start flex flex-col sm:h-auto">
-              <NavSocialLink href="https://github.com/Wrdle">
-                <AiFillGithub />
-              </NavSocialLink>
-              <NavSocialLink href="https://www.linkedin.com/in/matt-dagostino/">
-                <IoLogoLinkedin />
-              </NavSocialLink>
-            </div>
+    <nav className="bg-[#23272a]">
+      <div className="container mx-auto flex flex-wrap py-1.5 font-montserrat">
+      <Logo />
+      <HamburgerMenuIcon handleClick={handleClick} />
+      <div
+        className={`${
+          active ? "" : "hidden"
+        }   w-full lg:inline-flex lg:flex-grow lg:w-auto transition`}
+      >
+        <div className="container text-lg lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
+          <NavLink text="Home" href="/"></NavLink>
+          <NavLink text="Photography" href="/"></NavLink>
+          <NavLink text="Blog" href="/blog"></NavLink>
+          <div className="inline-flex flex-row mr-auto w-auto w-full items-start flex sm:h-auto">
+            <NavSocialLink href="https://github.com/Wrdle">
+              <AiFillGithub />
+            </NavSocialLink>
+            <NavSocialLink href="https://www.linkedin.com/in/matt-dagostino/">
+              <IoLogoLinkedin />
+            </NavSocialLink>
           </div>
         </div>
-      </nav>
-    </>
+      </div>
+      </div>
+    </nav>
   );
 };
 
 const Logo = () => {
   return (
     <Link href="/">
-      <a className="hover:text-white inline-flex items-center p-2 mr-4">
+      <a className="hover:text-white inline-flex items-center p-2 mr-4 text-white">
         <span className={NavStyles.CustomBrand}>
           mattdag<span className={NavStyles.underscore}>_</span>
         </span>
