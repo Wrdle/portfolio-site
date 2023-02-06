@@ -41,6 +41,7 @@ class MyDocument extends Document {
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossOrigin="anonymous"
           />
+          <script async defer data-domain="mattdag.com" src="https://stats.mattdag.com/js/script.js"/>
         </Head>
         <body>
           <Main />
