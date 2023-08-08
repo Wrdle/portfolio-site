@@ -1,73 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
 .var-highlight {
-    color: #77DCE8; }
-  
-  .string-highlight {
-    color: #FFD866; }
-  
-  .property-highlight {
-    color: white; }
-  
-  .equals-highlight {
-    color: #FF6188; }
-  
-  #typewriter {
-      width: 465px;
-      margin-left: auto;
+    color: #77DCE8;
+}
+
+.string-highlight {
+    color: #FFD866;
+}
+
+.property-highlight {
+    color: white;
+}
+
+.equals-highlight {
+    color: #FF6188;
+}
+
+#typewriter {
+    width: 465px;
+    margin-left: auto;
     font-size: 20px;
     margin: 0;
+    font-weight: 700;
     color: #79848F;
-    font-family: "Courier New";
-    font-weight: 600; }
-    #typewriter:after {
-      content: "|";
-      animation: blink 500ms linear infinite alternate; }
+    font-family: 'Courier Prime';
+    min-height: 240px;
+    display: flex;
+    align-items: flex-start;
+}
 
-  @media screen and (max-width: 1057px) {
-    #typewriter {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-    }
-  }
+.Cursor--blinking {
+    animation: blink 1s linear infinite;
+}
 
-  @media screen and (max-width: 991px) {
-    #typewriter {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      font-size: 17px;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    #typewriter {
-      font-size: 14px;
-      width: 100%;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    #typewriter {
-      font-size: 12px;
-      width: 100%;
-    }
-  }
-  
-  @-webkit-keyframes blink {
+@keyframes blink {
     0% {
-      opacity: 0; }
+        opacity: 1; }
+    50% {
+        opacity: 0; }
     100% {
-      opacity: 1; } }
-  
-  @-moz-keyframes blink {
-    0% {
-      opacity: 0; }
-    100% {
-      opacity: 1; } }
-  
-  @keyframes blink {
-    0% {
-      opacity: 0; }
-    100% {
-      opacity: 1; } }
-  
+        opacity: 1; } }
+
+@media screen and (max-width: 1057px) {
+    #typewriter {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #typewriter {
+        font-size: 18px;
+        min-height: 216px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #typewriter {
+        font-size: 14px;
+        width: 100%;
+        min-height: 168px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #typewriter {
+        font-size: 12px;
+        min-height: 144px;
+    }
+}
+
+
+/*.wrap-layer {*/
+/*    position: relative;*/
+/*}*/
+
+/*.wrap-layer svg {*/
+/*    position: absolute;*/
+/*    opacity: 0.3;*/
+/*    min-height: 300px;*/
+/*    width: auto;*/
+/*}*/

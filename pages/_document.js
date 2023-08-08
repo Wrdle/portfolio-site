@@ -1,9 +1,9 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, {Html, Head, Main, NextScript} from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    return {...initialProps};
   }
 
   render() {
@@ -27,22 +27,23 @@ class MyDocument extends Document {
             sizes="16x16"
             href="/static/favicon-16x16.png"
           />
-          <link rel="manifest" href="/static/site.webmanifest" />
+          <link rel="manifest" href="/static/site.webmanifest"/>
           <link
             rel="mask-icon"
             href="/static/safari-pinned-tab.svg"
             color="#5bbad5"
           />
-          <meta name="msapplication-TileColor" content="#00aba9" />
-          <meta name="theme-color" content="#ffffff" />
+          <meta name="msapplication-TileColor" content="#00aba9"/>
+          <meta name="theme-color" content="#ffffff"/>
           <link
             rel="stylesheet"
             href={"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/atom-one-dark.min.css"}
           />
+          <script async defer data-domain="localhost:3001" src={"https://stats.mattdag.com/js/script.js"}/>
         </Head>
         <body>
-          <Main />
-          <NextScript />
+        <Main/>
+        <NextScript/>
         </body>
       </Html>
     );

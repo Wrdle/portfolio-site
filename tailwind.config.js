@@ -6,9 +6,22 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      montserrat: ["Montserrat"],
+      montserrat: ["Montserrat"]
     },
-    extend: {},
+    // extend: {
+    //   typography: {
+    //     DEFAULT: {
+    //       css: {
+    //         'h1:has(+h2)': {
+    //           marginBottom: 4,
+    //         },
+    //         'h1 + h2': {
+    //           marginTop: 8,
+    //         }
+    //       }
+    //     }
+    //   }
+    // },
   },
   plugins: [require("@tailwindcss/typography")],
 };
