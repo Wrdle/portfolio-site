@@ -25,6 +25,7 @@ yarn-error.log*
 /.next
 /.vscode
 /.idea
+/_static
 
 /out
 

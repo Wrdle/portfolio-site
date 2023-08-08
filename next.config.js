@@ -4,7 +4,10 @@
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  images:{
+  output: 'export',
+  distDir: '_static',
+  trailingSlash: true,
+  images: {
     unoptimized: true
   }
 }
