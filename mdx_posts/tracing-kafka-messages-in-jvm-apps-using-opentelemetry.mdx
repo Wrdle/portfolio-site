@@ -70,11 +70,13 @@ logs to traces within your monitoring visualisation software.
 
 
 **Grafana Log**
->l=INFO h=MATT-XPS c=c.m.e.c.KafkaListener t=org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1 ***<u>trace_id=9ca450e7b1fbd5f1e04b31289937de70, trace_flags=01, span_id=bbed7b3951995dcf</u>*** | Consumed message: [ExampleTransformedMessage(userId=ee9ccb50-c755-4aea-a09e-5b92485cdeee, name=Rolland Macejkovic, age=49)]
-
+<blockquote style={{wordBreak: "break-all"}}>
+l=INFO h=MATT-XPS c=c.m.e.c.KafkaListener t=org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1 ***<u>trace_id=9ca450e7b1fbd5f1e04b31289937de70, trace_flags=01, span_id=bbed7b3951995dcf</u>*** | Consumed message: [ExampleTransformedMessage(userId=ee9ccb50-c755-4aea-a09e-5b92485cdeee, name=Rolland Macejkovic, age=49)]
+</blockquote>
 **Standard Output Log**
->'2023-08-08 19:35:59 - c.m.e.component.KafkaListener - ***<u>trace_id=9ca450e7b1fbd5f1e04b31289937de70, trace_flags=01, span_id=bbed7b3951995dcf</u>__*** - Consumed message: [ExampleTransformedMessage(userId=ee9ccb50-c755-4aea-a09e-5b92485cdeee, name=Rolland Macejkovic, age=49)]'
-
+<blockquote style={{wordBreak: "break-all"}}>
+'2023-08-08 19:35:59 - c.m.e.component.KafkaListener - ***<u>trace_id=9ca450e7b1fbd5f1e04b31289937de70, trace_flags=01, span_id=bbed7b3951995dcf</u>__*** - Consumed message: [ExampleTransformedMessage(userId=ee9ccb50-c755-4aea-a09e-5b92485cdeee, name=Rolland Macejkovic, age=49)]'
+</blockquote>
 
 ## Example Project
 To demonstrate how to set up and run the Java Agent I have put together a repository that contains three basic Kafka
