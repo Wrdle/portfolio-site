@@ -1,12 +1,16 @@
 ---
 title: Tracing Kafka messages in JVM apps using OpenTelemetry
 date: 08/08/2023
+updated: 20/11/2023
 excerpt: Setting up tracing between Kafka apps can be a challenging and tiresome endeavour. Here I show you the easiest way setup OpenTelemetry tracing using the OpenTelemetry java agent. 🔎
 ---
 
 <Meta title="Tracing Kafka messages in JVM apps using OpenTelemetry - Matt D'Agostino" />
+<Meta name="author" content="Matt D'Agostino"/>
+<Meta name="keywords" content="Kafka, OpenTelemetry, Otel, Java Agent, Grafana, Tracing, SpringBoot, Kotlin, JVM"/>
 
-Tracing messages both within Kafka and between Kafka applications is no trivial task. There are few real "out of the box" solutions.
+
+  Tracing messages both within Kafka and between Kafka applications is no trivial task. There are few real "out of the box" solutions.
 Meaning for a long time, if you wanted to trace messages, it was up to you as the developer to manually instrument your applications to generate and export tracing information.
 
 I don't know about you, but I got better things to be doing. I'd rather be thinking about my actual core application and delivering features instead of developing, testing, rolling out and providing continual updates/fixes to my own tracing implementation 😕.

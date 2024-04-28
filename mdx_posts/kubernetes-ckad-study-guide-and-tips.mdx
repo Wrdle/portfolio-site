@@ -1,0 +1,138 @@
+---
+title: "Kubernetes CKAD: Study guide and tips"
+date: 08/08/2023
+excerpt: The CKAD is an extremely beneficial but difficult exam. Having done the CKAD in the past year, I recap the resources I used and tips I recommend.
+---
+
+<Meta title="Tracing Kafka messages in JVM apps using OpenTelemetry - Matt D'Agostino" />
+<Meta name="author" content="Matt D'Agostino"/>
+<Meta name="keywords" content="Kafka, OpenTelemetry, Otel, Java Agent, Grafana, Tracing, SpringBoot, Kotlin, JVM"/>
+
+The CKAD exam is a fantastic way to achieve a deep understanding of Kubernetes and container orchestration. In fact,
+for myself this was the exact reason why I pursued it only a few months out of university.
+
+For me, in my job we host a lot all of our applications within Kubernetes, however, I found myself mostly out of my
+depth or constantly googling answers to common knowledge. By studying for the CKAD and following online courses, I
+found I quickly was able to perform my job better and to a highly quality standard bringing knowledge into our team
+other seniors did not even have!
+
+## What will you learn?
+The exam curriculum is broken down five Kubernetes domains:
+- Application Design and Build
+- Application Deployment
+- Application Observability
+- Application Environment, Configuration and Security
+- Services and networking
+
+Each domain corresponds to different Kubernetes concepts and ways of thinking with questions designed to quiz you
+on how well you can bring these ideas from different domains together. Overall, by completing the CKAD one could expect
+you to be able to take a given application, containerize it, create pod configuration for it, configure its deployment
+strategy, create application configuration through config maps, setup health checks and setup networking. Basically
+everything you need to take any app and put it in a cluster! Very practical!
+
+By studying for the exam you learn all of these concepts following official Kubernetes best practices and learning how
+to properly utilize official Kubernetes technologies and services such as Helm deployments.
+
+## Training material
+Okay, so you want to do the exam, but where to start? To study for my exam I reviewed a wide variety of resources
+to gain a deep understanding of the ecosystem. As awesome Kubernetes is, there's a lot to it, so finding good study
+material is a must!
+
+Full disclosure I receive no benefits for mentioning or recommending any of the following study material. These are
+resources I actually used and found useful!
+
+### Udemy - CKAD course by Mumshad Mannambeth
+Throughout my study, this is probably the resource I found the most useful. This video course on Udemy by Mumshad
+Mannambeth covers all topics the exam contains from A-z broken down into small bite-sized videos that are well explained
+that make it easy to understanding difficult concepts.
+
+What's really nice about this course is it comes included with access to interactive labs provided by KodeKloud. These
+labs were extremely useful as they provide an environment in which you can practice using the `kubectl` on a real
+temporary cluster which is automatically torn down at the end of the exercise. This means no accidental costs of leaving
+a cluster running in AWS or the like! Not to mention, being a fully integrated learning platform, at the end of the
+exercise the website checks you have followed the instruction and completed the exercise correctly, very important for
+the exam!
+
+### Website - Cloud Academy
+Cloud academy similar to KodeKloud provides a temporary cluster environment in which you are able to complete exercises
+that teach and test your Kubernetes knowledge. The website also couples these practical exercises with videos and written
+articles that explain concepts.
+
+Overall I found Cloud Academy to be a great secondary study resource that I used to solidify knowledge I learnt form
+Mumshad's course and KodeKloud. I found most concepts to be better explained through Mumshads course and sometimes to
+further detail too. Similarly, the lab exercises were more 'clunky' requiring the user to enter an AWS console and ssh
+into an EC2 instance, which could be a bit cumbersome. Nevertheless, I would still recommend subscribing for a month
+before you take the exam to be able to review their material as a "solidifier" and to be able to access their practice
+exams.
+
+### Book - Certified Kubernetes Application Developer Study Guide
+This is probably one of the best resources if you prefer to read as your study method! The Certified Kubernetes
+Application Developer Study Guide book by O'Reilly is s great in depth guide to understanding Kubernetes. Personally I
+did not find myself reading this book from front to cover, but I did find it a useful guide for understanding complicated
+concepts like ingresses in more detail. In fact, I still find myself returning to this book, whenever I need a in-depth
+refresher on a particular concept.
+
+## Practice Exams
+So you have been doing online labs, maybe you have read a few books, but it's time to start preparing for the exam!
+Luckily, there are many online practice exams for the CKAD exam, however, I'm in this section, I am only going to
+discuss the practice exam material I used to pass my exam.
+
+### KodeKloud and Cloud Academy
+Earlier in this article, I mentioned both Cloud Academy and KodeKloud as great a great resource for online labs. But they
+both also offer multiple realistic practise exams that are timed and automatically graded. In fact, if you have purchased
+Mumshads course you don't really need anything else as I found these practise exams to be very broad and accurate to the
+harder questions on the real exam.
+
+However, if you still find yourself not completely confident (like I did), for extra practise, I would also highly
+recommend purchasing a one-month subscription to CloudAcademy before sitting your exam. Personally, I found the exams to
+have different questions to KloudAcademy but equal difficulty. Completing both of these sets of practise
+exams multiple times got me back into the habit of sitting exams and exam time management (I don't miss those uni exams 😅),
+which is important considering the nature of the exam.
+
+### Killer.sh
+Upon purchasing your CKAD exam you will actually receive two free sessions to Killer.sh. USE THEM!  Going into the Killer.sh practise exam I was
+expecting a similar level of difficulty to the exams I had completed on KodeKloud and CloudAcademy. So I was taken by
+surprise when I found myself unable to breeze through the questions barely passing the practise exam.
+
+So I googled around and discovered many people reporting that this exam is a lot harder than the real CKAD exam.
+After sitting my actual CKAD exam, I can also report this is true! The real CKAD exam is broken up into questions of
+multiple difficulties that are all weighted differently. However, the Killer.sh practise exam is more equivalent to ONLY
+getting the most difficult questions in the same exam time periods. Because of this alone I would highly reccomend
+anyone sitting the CKAD exam to use their Killer.sh practise exams. If you can confidently do these practise exams you
+can be confident you are ready to sit the real thing!
+
+## Tips and Tricks
+Choosing the correcting learning resources and practise exams is pretty simple considering the wealth of quality content.
+However, there are also some tips and tricks listed here that I believe are almost necessary to successfully completing the
+CKAD exam.
+
+### Learn to use the Linux CLI
+No one wants to hear it, especially if you are not a linux wizard (I'm definitely not). Learning how to use the Linux CLI
+and the common commands bundled with most distros can be the difference between finishing all the questions on the exams
+or running out of time. I'd recommend at least learning popular CLI commands like `grep`, `tail`, `jq` and `wc`. These
+commands can help you find things and debug outputs from kubectl quickly during the exam. Not to mention, because
+foundational linux is a pre-requisite to the exam, there is nothing stopping them from slipping in a question that
+requires you to use basic commands in order to complete the question.
+
+### Learn to use Kubectl fast and effectively
+During your exam, you won't have time to write out entire yaml configuration files to answer the questions. Instead,
+its' important to have a good proficiency in the imperative kubectl commands like `kubectl create`. This paired with
+`--dry-run=client` and `-o yaml` you can quickly generate yaml config files that you can edit without needing to write
+ it out yourself.
+
+One command in particular that is generally forgotten about is the `kubectl explain` command, which can provide in-depth
+explanations of every field for a given Kubernetes object. This is extremely useful during the exam if you have
+forgotten the spec or syntax for a particular object or property and just need a reference.
+
+# __EXAMPLE HERE__
+
+
+### Setup a real cluster!
+
+### Become a master of Kubernetes.io
+
+### Write things down!
+
+
+
+
