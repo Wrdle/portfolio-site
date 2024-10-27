@@ -9,7 +9,7 @@ import {GiHamburgerMenu} from "react-icons/gi";
 
 import NavStyles from "/styles/Navbar.module.css";
 
-export const Navbar = (darkMode) => {
+export const Navbar = () => {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {
@@ -29,7 +29,7 @@ export const Navbar = (darkMode) => {
             className="container text-lg lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
             <NavLink text="Home" href="/"></NavLink>
             <NavLink text="Blog" href="/blog"></NavLink>
-            <div className="inline-flex flex-row mr-auto w-auto w-full items-start flex sm:h-auto">
+            <div className="flex flex-row mr-auto w-full items-start sm:h-auto">
               <NavSocialLink href="https://github.com/Wrdle">
                 <AiFillGithub/>
               </NavSocialLink>
@@ -46,24 +46,23 @@ export const Navbar = (darkMode) => {
 
 const Logo = () => {
   return (
-    <Link href="/">
-      <a className="hover:text-white inline-flex items-center py-2 mr-4 text-white">
-        <span className={NavStyles.CustomBrand}>
-          mattdag<span className={NavStyles.underscore}>_</span>
-        </span>
-      </a>
-    </Link>
+    (<Link
+      href="/"
+      className="hover:text-white inline-flex items-center py-2 mr-4 text-white">
+      <span className={NavStyles.CustomBrand}>
+        mattdag<span className={NavStyles.underscore}>_</span>
+      </span>
+    </Link>)
   );
 };
 
 const NavLink = ({text, href}) => {
   return (
-    <Link href={href}>
-      <a
-        className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-zinc-400 items-center justify-center hover:text-zinc-200 transition">
+    (<Link
+      href={href}
+      className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-zinc-400 items-center justify-center hover:text-zinc-200 transition">
         {text}
-      </a>
-    </Link>
+    </Link>)
   );
 };
 

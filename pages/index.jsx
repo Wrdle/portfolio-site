@@ -2,7 +2,7 @@ import Head from "next/head";
 import {Navbar} from "/components/Navbar";
 import React from "react";
 import TypingAnimation from "@components/TypingAnimation";
-import Image from 'next/image';
+import Image from "next/image";
 import SvgDivider from "@components/SvgDivider";
 import {AiFillGithub} from "react-icons/ai";
 import {IoLogoLinkedin} from "react-icons/io";
@@ -25,11 +25,11 @@ export default function Home() {
                 <h1 className="text-7xl font-bold pb-2">Hi, I'm Matt.</h1>
                 <p className="font-extralight text-xl">
                   I'm Matt D'Agostino, a Software Engineer currently working at
-                  Suncorp Bank. I have a passion for engineering solutions to problems using
+                  Suncorp Bank (ANZ). I have a passion for engineering solutions to problems using
                   best practices and the latest technology.
                 </p>
               </div>
-              <TypingAnimation></TypingAnimation>
+              {/*<TypingAnimation></TypingAnimation>*/}
             </div>
           </div>
         </div>
@@ -47,28 +47,38 @@ export default function Home() {
 }
 
 function AboutMe() {
-  return <div className="bg-white relative">
-    <SvgDivider/>
-    <div id="about-me"
-         className="sm:container sm:mx-auto flex flex-wrap text-[#10101a] font-montserrat pt-6 pb-16 px-3 gap-y-10">
-      <div className="basis-full lg:basis-1/2">
-        <h1 className="font-bold text-6xl py-2">About me.</h1>
-        <p>Hi there, I'm Matt, and I'm a software engineer at Suncorp Bank. I work with Kafka, Kotlin,
-          SpringBoot and React to make the bank's daily operations run smoothly through eventing pipelines.
-          <br/><br/>
-          I have a genuine enthusiasm for Software Engineering, and I'm always on the lookout for new technologies
-          to get my hands dirty with. When I'm not glued to my laptop screen, you can usually find me at the gym or
-          spending time with my partner.
-          <br/><br/>
-          I believe that passion is the key to success, and I'm passionate about my work. I love nothing more than
-          diving into a complex problem and coming up with a solution.
-        </p>
-      </div>
-      <div className="basis-full lg:basis-1/2 relative min-h-[250px]">
-        <Image priority src="/static/programming-orange.svg" layout={"fill"} alt="Programming picture"/>
+  return (
+    <div className="bg-white relative">
+      <SvgDivider/>
+      <div id="about-me"
+           className="sm:container sm:mx-auto flex flex-wrap text-[#10101a] font-montserrat pt-6 pb-16 px-3 gap-y-10">
+        <div className="basis-full lg:basis-1/2">
+          <h1 className="font-bold text-6xl py-2">About me.</h1>
+          <p>Hi there, I'm Matt, and I'm a software engineer at Suncorp Bank. I work with Kafka, Kotlin,
+            SpringBoot and React to make the bank's daily operations run smoothly through eventing pipelines.
+            <br/><br/>
+            I have a genuine enthusiasm for Software Engineering, and I'm always on the lookout for new technologies
+            to get my hands dirty with. When I'm not glued to my laptop screen, you can usually find me at the gym or
+            spending time with my partner.
+            <br/><br/>
+            I believe that passion is the key to success, and I'm passionate about my work. I love nothing more than
+            diving into a complex problem and coming up with a solution.
+          </p>
+        </div>
+        <div className="basis-full lg:basis-1/2 relative min-h-[250px]">
+          <Image
+            priority
+            src="/static/programming-orange.svg"
+            fill={true}
+            alt="Programming picture"
+            style={{
+              maxWidth: "100%",
+
+            }} />
+        </div>
       </div>
     </div>
-  </div>
+  );
 }
 
 function Footer() {
