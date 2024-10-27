@@ -7,7 +7,7 @@ import {ArticleDTO} from "@lib/model/ArticleDTO";
 import React from "react";
 import RainbowDivider from "@components/RainbowDivider";
 
-export default function Home({posts}) {
+export default function BlogPage({posts}) {
   return (
     <div className="bg-[#10101a] min-h-[100vh]">
       <HtmlHead/>
