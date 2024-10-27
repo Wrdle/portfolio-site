@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const Meta = ({title}) => {
+const Meta = ({title = "Matt D'Agostino's Blog"}) => {
   return (
     <Head>
       <title>{title}</title>
@@ -14,8 +14,3 @@ const Meta = ({title}) => {
 };
 
 export default Meta;
-
-// Default title
-Meta.defaultProps = {
-  title: "Matt D'Agostino's Blog",
-};

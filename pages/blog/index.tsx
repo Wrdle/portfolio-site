@@ -7,13 +7,13 @@ import {ArticleDTO} from "@lib/model/ArticleDTO";
 import React from "react";
 import RainbowDivider from "@components/RainbowDivider";
 
-export default function Home({posts}) {
+export default function BlogPage({posts}) {
   return (
     <div className="bg-[#10101a] min-h-[100vh]">
       <HtmlHead/>
       <Navbar/>
       <RainbowDivider/>
-      <div className="container px-5  mx-auto mt-6">
+      <div className="container px-5 mx-auto mt-6">
         <h1 className="text-2xl text-[50px] font-extrabold font-sans leading-normal">All Posts</h1>
         <p className="leading-normal">I may write something interesting, no promises though. I
           just write about what interests me at the time 🎓💡</p>
