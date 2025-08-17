@@ -10,7 +10,7 @@ export function getPostSlugs(): string[] {
     return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(slug: String): Article {
+export function getPostBySlug(slug: string): Article {
     const realSlug = slug.replace(/\.mdx$/, "");
     const fullPath = join(postsDirectory, `${realSlug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -26,7 +26,7 @@ export function getAllPosts(): Article[] {
     return slugs
         .map((slug) => getPostBySlug(slug))
         // sort posts by date in descending order
-        .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+        .sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
 function parseDate(dateString: string): Date {

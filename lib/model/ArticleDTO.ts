@@ -1,6 +1,6 @@
 export interface ArticleDTO {
     title: string;
-    date: string;
+    formattedDate: string;
     content: string;
     excerpt: string;
     slug: string;

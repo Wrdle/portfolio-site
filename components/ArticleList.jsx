@@ -26,7 +26,7 @@ function Post({post}) {
     <div>
       <br/>
       <a href={"/blog/posts/" + post.slug}>
-        <p className="text-gray-400">{post.date} – ☕ {post.readingTimeText}</p>
+        <p className="text-gray-400">{post.formattedDate} – ☕ {post.readingTimeText}</p>
         <h1 className="text-3xl font-extrabold my-1.5 underline decoration-sky-500 hover:decoration-4">{post.title}</h1>
         <p>{post.excerpt}</p>
       </a>
