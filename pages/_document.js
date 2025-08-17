@@ -37,7 +37,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff"/>
           <link
             rel="stylesheet"
-            href={"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/atom-one-dark.min.css"}
+            href={"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"}
           />
           <script async defer data-domain="mattdag.com" src={"https://stats.mattdag.com/js/script.js"} type="application/javascript"/>
         </Head>

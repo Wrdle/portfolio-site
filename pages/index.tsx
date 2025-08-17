@@ -17,13 +17,13 @@ const Home: FC = () => {
             <div className="bg-[url('/static/mmmotif.svg')] bg-cover w-full h-screen opacity-5"></div>
           </div>
           <HtmlHead />
-          <div className="h-screen w-100 block font-white font-montserrat">
+          <div className="h-screen w-full block font-white font-montserrat">
             <Navbar />
             <div className="relative top-[45%] translate-y-[-55%]">
               <div className="flex items-center flex-wrap justify-evenly w-[80%] mx-auto gap-y-10">
                 <div className="xl:basis-[45%] text-center xl:text-left">
                   <h1 className="text-7xl font-bold pb-2">Hi, I'm Matt.</h1>
-                  <p className="font-extralight text-xl">
+                  <p className="font-light text-xl opacity-85">
                     I'm Matt D'Agostino, a Software Engineer currently working at
                     Suncorp Bank (ANZ Bank). I have a passion for engineering
                     solutions to problems using best practices and the latest
