@@ -3,14 +3,14 @@ import readingTime, {ReadTimeResults} from "reading-time";
 import {ArticleDTO} from "@lib/model/ArticleDTO";
 
 export class Article {
-    title: String;
-    date: Date;
-    content: String;
-    excerpt: String;
-    slug: String;
-    readingTimeResults: ReadTimeResults;
+    readonly title: string;
+    readonly date: Date;
+    readonly content: string;
+    readonly excerpt: string;
+    readonly slug: string;
+    readonly readingTimeResults: ReadTimeResults;
 
-    constructor(title: String, date: Date, content: String, excerpt: String, slug: String) {
+    constructor(title: string, date: Date, content: string, excerpt: string, slug: string) {
         this.title = title;
         this.date = date;
         this.content = content;
@@ -19,22 +19,22 @@ export class Article {
         this.readingTimeResults = readingTime(content.toString())
     }
 
-    getDateString(): String {
+    getDateString(): string {
         return format(this.date, "LLLL do, yyyy")
     }
 
-    getReadTimeString(): String {
+    getReadTimeString(): string {
         return this.readingTimeResults.text
     }
 
     getArticleDTO(): ArticleDTO {
         return {
-            title: this.title.toString(),
-            date: this.getDateString().toString(),
-            content: this.content.toString(),
-            excerpt: this.excerpt.toString(),
-            slug: this.slug.toString(),
-            readingTimeText: this.getReadTimeString().toString()
+            title: this.title,
+            formattedDate: this.getDateString().toString(),
+            content: this.content,
+            excerpt: this.excerpt,
+            slug: this.slug,
+            readingTimeText: this.getReadTimeString()
         }
     }
 }

@@ -10,9 +10,9 @@ export default function BlogArticle({article}) {
       <article
         className="py-8 px-3 prose prose-invert mx-auto min-w-[90%] md:min-w-[80%] xl:min-w-[60%]">
         <h1 className="my-1.5 text-4xl mt-0">{article.title}</h1>
-        <p className="my-1 text-[#999CA1]">Matt D'Agostino – {article.date} – ☕ {article.readingTimeText}</p>
+        <p className="my-1 text-[#999CA1]">Matt D'Agostino – {article.formattedDate} – ☕ {article.readingTimeText}</p>
         <div>
-          <MDXRemote {...article.content} components={components}/>
+          <MDXRemote {...article.serializedMdx} components={components}/>
         </div>
       </article>
     </>
