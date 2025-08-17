@@ -23,7 +23,7 @@ export const Navbar = () => {
         <div
           className={`${
             active ? "" : "hidden"
-          }   w-full lg:inline-flex lg:flex-grow lg:w-auto transition`}
+          }   w-full lg:inline-flex lg:grow lg:w-auto transition`}
         >
           <div
             className="container text-lg lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
@@ -80,7 +80,7 @@ const NavSocialLink = ({children, href}) => {
 const HamburgerMenuIcon = ({handleClick}) => {
   return (
     <button
-      className="inline-flex p-3 lg:hidden text-white ml-auto outline-none transition items-center"
+      className="inline-flex p-3 lg:hidden text-white ml-auto outline-hidden transition items-center"
       onClick={handleClick}
     >
       <GiHamburgerMenu

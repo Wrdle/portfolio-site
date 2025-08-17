@@ -9,7 +9,7 @@ import RainbowDivider from "@components/RainbowDivider";
 
 export default function BlogPage({posts}) {
   return (
-    <div className="bg-[#10101a] min-h-[100vh]">
+    <div className="bg-[#10101a] min-h-screen">
       <HtmlHead/>
       <Navbar/>
       <RainbowDivider/>
