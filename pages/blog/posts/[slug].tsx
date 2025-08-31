@@ -31,7 +31,7 @@ export default function Post({post}: PostPageProps) {
         <div className="bg-[#10101a] min-h-screen">
             <Navbar/>
             <RainbowDivider/>
-            <div className="container mx-auto pb-5">
+            <div className="container mx-auto pb-5 px-5">
                 <BlogArticle article={post}/>
                 <Comments/>
             </div>
