@@ -1,0 +1,23 @@
+{
+  "origin": "https://mattdag.com",
+  "siteName": "Matt D'Agostino",
+  "language": "en-AU",
+  "locale": "en_AU",
+  "author": {
+    "name": "Matt D'Agostino",
+    "sameAs": [
+      "https://github.com/Wrdle",
+      "https://www.linkedin.com/in/matt-dagostino/"
+    ]
+  },
+  "descriptions": {
+    "home": "Matt D'Agostino is a software engineer sharing work, writing, and practical engineering experience.",
+    "blog": "Articles by Matt D'Agostino about software engineering, backend systems, and technology."
+  },
+  "defaultSocialImage": {
+    "path": "/static/matt-dagostino-social-card.png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Matt D'Agostino — Software Engineer portfolio"
+  }
+}

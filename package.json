@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack && node scripts/generate-sitemap.mjs",
+    "seo:generate-sitemap": "node scripts/generate-sitemap.mjs",
     "start": "next start"
   },
   "dependencies": {

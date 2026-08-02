@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React, { FC } from "react";
 import Image from "next/image";
 import SvgDivider from "@components/SvgDivider";
@@ -8,21 +7,45 @@ import { IoMail } from "react-icons/io5";
 import SocialLinkIcon from "@components/SocialLinkIcon";
 import TypingAnimation from "@components/TypingAnimation";
 import { Navbar } from "@components/Navbar";
+import Seo from "@components/Seo";
+import {canonicalUrl, personSchema, personSchemaId, site} from "@lib/siteMetadata";
 
 const Home: FC = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${canonicalUrl()}#website`,
+        url: canonicalUrl(),
+        name: site.siteName,
+        description: site.descriptions.home,
+        publisher: {"@id": personSchemaId},
+      },
+      personSchema(),
+    ],
+  };
+
   return (
       <div>
-        <div>
+        <Seo
+          title="Matt D'Agostino | Software Engineer"
+          description={site.descriptions.home}
+          jsonLd={jsonLd}
+        />
+        <main>
+          <section aria-labelledby="home-heading">
           <div className="-z-10 bg-[#10101a] block w-full h-screen absolute">
             <div className="bg-[url('/static/mmmotif.svg')] bg-cover w-full h-screen opacity-5"></div>
           </div>
-          <HtmlHead />
           <div className="h-screen w-full block font-white font-montserrat">
-            <Navbar />
+            <header>
+              <Navbar />
+            </header>
             <div className="relative top-[45%] translate-y-[-55%]">
               <div className="flex items-center flex-wrap justify-evenly w-[80%] mx-auto gap-y-10">
                 <div className="xl:basis-[45%] text-center xl:text-left">
-                  <h1 className="text-7xl font-bold pb-2">Hi, I'm Matt.</h1>
+                  <h1 id="home-heading" className="text-7xl font-bold pb-2">Matt D'Agostino, Software Engineer</h1>
                   <p className="font-light text-xl opacity-85">
                     I'm Matt D'Agostino, a Software Engineer currently working at
                     Suncorp Bank (ANZ Bank). I have a passion for engineering
@@ -34,8 +57,9 @@ const Home: FC = () => {
               </div>
             </div>
           </div>
-        </div>
-        <AboutMe />
+          </section>
+          <AboutMe />
+        </main>
         <Footer />
       </div>
   );
@@ -43,14 +67,11 @@ const Home: FC = () => {
 
 const AboutMe: FC = () => {
   return (
-      <div className="bg-white relative">
+      <section className="bg-white relative" aria-labelledby="about-me">
         <SvgDivider />
-        <div
-            id="about-me"
-            className="sm:container sm:mx-auto flex flex-wrap text-[#10101a] font-montserrat pt-6 pb-16 px-3 gap-y-10"
-        >
+        <div className="sm:container sm:mx-auto flex flex-wrap text-[#10101a] font-montserrat pt-6 pb-16 px-3 gap-y-10">
           <div className="basis-full lg:basis-1/2">
-            <h1 className="font-bold text-6xl py-2">About me.</h1>
+            <h2 id="about-me" className="font-bold text-6xl py-2">About me.</h2>
             <p>
               Hi there, I'm Matt, and I'm a software engineer at Suncorp Bank. I
               work with Kafka, Kotlin, SpringBoot and React to make the bank's
@@ -80,15 +101,15 @@ const AboutMe: FC = () => {
             />
           </div>
         </div>
-      </div>
+      </section>
   );
 };
 
 const Footer: FC = () => {
   return (
-      <div className="bg-[#10101a] text-center py-14">
+      <footer className="bg-[#10101a] text-center py-14">
         <p className="text-[#A8A8A8] text-l">Get in touch</p>
-        <h1 className="text-6xl font-bold py-2">Lets Chat.</h1>
+        <h2 className="text-6xl font-bold py-2">Lets Chat.</h2>
         <div className="pt-2">
           <SocialLinkIcon href="https://github.com/Wrdle">
             <AiFillGithub />
@@ -100,25 +121,7 @@ const Footer: FC = () => {
             <IoMail />
           </SocialLinkIcon>
         </div>
-      </div>
-  );
-};
-
-const HtmlHead: FC = () => {
-  return (
-      <Head>
-        <title>Matt D'Agostino</title>
-        <meta
-            property="og:title"
-            content="Matt D'Agostino Portfolio Website"
-            key="title"
-        />
-        <meta
-            property="og:description"
-            content="Hi! I'm Matt D'Agostino and this is my portfolio website."
-            key="description"
-        />
-      </Head>
+      </footer>
   );
 };
 

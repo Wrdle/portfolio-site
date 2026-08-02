@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Personal portfolio and blog built with the Next.js Pages Router, MDX, and Tailwind CSS. The site is statically exported for deployment to DigitalOcean App Platform.
 
 ## Requirements
 
@@ -15,9 +15,7 @@ pnpm install
 pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. Pages live in `pages/`; blog posts live in `mdx_posts/`. The development server reloads changes automatically.
 
 ## Production and deployment
 
@@ -35,17 +33,29 @@ corepack enable && pnpm install --frozen-lockfile && pnpm run build
 
 Deploy the generated `out/` directory. Static hosting must preserve the trailing-slash route structure used by the application.
 
-## Learn More
+## SEO and blog content
 
-To learn more about Next.js, take a look at the following resources:
+The canonical site identity, HTTPS origin, default descriptions, social profiles, locale, and default social card are defined in `config/site.json`. Update this file before deploying to a different canonical host.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every `.mdx` post requires this front matter:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```mdx
+---
+title: A unique post title
+date: 08/08/2023
+excerpt: A concise, accurate description of the post.
+---
+```
 
-## Deploy on Vercel
+Posts can also include:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```mdx
+updated: 09/08/2023
+image: /static/representative-post-image.png
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`date` and `updated` must use `dd/MM/yyyy`. Add `updated` only after a meaningful content change. `image` must be a representative asset under `public/static/`; it is used in article schema and social metadata when supplied.
+
+The production build writes `out/sitemap.xml` after Next.js completes its static export. `public/robots.txt` advertises that sitemap. Before release, configure DigitalOcean to redirect every HTTP, `www`, and other non-canonical host variant to the HTTPS origin in `config/site.json`; canonical tags cannot prevent duplicate HTML by themselves.
+
+After deployment, verify the canonical redirects, `robots.txt`, `sitemap.xml`, rendered source metadata, social preview, and Google Search Console sitemap processing.

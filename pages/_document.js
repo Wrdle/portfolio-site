@@ -1,4 +1,5 @@
 import Document, {Html, Head, Main, NextScript} from "next/document";
+import siteConfig from "../config/site.json";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -8,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang={siteConfig.language}>
         <Head>
           <link
             rel="apple-touch-icon"
@@ -28,6 +29,7 @@ class MyDocument extends Document {
             href="/static/favicon-16x16.png"
           />
           <link rel="manifest" href="/static/site.webmanifest"/>
+          <meta name="msapplication-config" content="/static/browserconfig.xml"/>
           <link
             rel="mask-icon"
             href="/static/safari-pinned-tab.svg"
