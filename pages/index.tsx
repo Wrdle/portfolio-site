@@ -45,7 +45,7 @@ const Home: FC = () => {
             <div className="relative top-[45%] translate-y-[-55%]">
               <div className="flex items-center flex-wrap justify-evenly w-[80%] mx-auto gap-y-10">
                 <div className="xl:basis-[45%] text-center xl:text-left">
-                  <h1 id="home-heading" className="text-7xl font-bold pb-2">Matt D'Agostino, Software Engineer</h1>
+                  <h1 id="home-heading" className="text-7xl font-bold pb-2">Hi, I'm Matt.</h1>
                   <p className="font-light text-xl opacity-85">
                     I'm Matt D'Agostino, a Software Engineer currently working at
                     Suncorp Bank (ANZ Bank). I have a passion for engineering
