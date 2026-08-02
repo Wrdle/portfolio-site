@@ -1,18 +1,39 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Requirements
+
+- Node.js >= 20.19.0
+- Corepack, which provides the pnpm version pinned in `package.json`
+
 ## Getting Started
 
-First, run the development server:
+Enable Corepack once, then install dependencies and start the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
+corepack enable
+pnpm install
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+## Production and deployment
+
+Create the static production output with:
+
+```bash
+pnpm run build
+```
+
+For reproducible deployment installs, use:
+
+```bash
+corepack enable && pnpm install --frozen-lockfile && pnpm run build
+```
+
+Deploy the generated `out/` directory. Static hosting must preserve the trailing-slash route structure used by the application.
 
 ## Learn More
 
