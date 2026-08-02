@@ -1,4 +1,3 @@
-import Head from "next/head";
 import {getAllPosts} from "@lib/Articles";
 import ArticleList from "@components/ArticleList";
 import {Navbar} from "@components/Navbar";
@@ -6,38 +5,57 @@ import {GetStaticProps} from 'next'
 import {ArticleDTO} from "@lib/model/ArticleDTO";
 import React from "react";
 import RainbowDivider from "@components/RainbowDivider";
+import Seo from "@components/Seo";
+import {canonicalUrl, personSchemaId, postUrl, site} from "@lib/siteMetadata";
 
-export default function BlogPage({posts}) {
+interface BlogPageProps {
+  posts: ArticleDTO[];
+}
+
+export default function BlogPage({posts}: BlogPageProps) {
+  const blogUrl = canonicalUrl("/blog/");
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": `${blogUrl}#blog`,
+        url: blogUrl,
+        name: `${site.siteName} Blog`,
+        description: site.descriptions.blog,
+        author: {"@id": personSchemaId},
+        publisher: {"@id": personSchemaId},
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${blogUrl}#posts`,
+        itemListElement: posts.map((post, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: postUrl(post.slug),
+          name: post.title,
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="bg-[#10101a] min-h-screen">
-      <HtmlHead/>
       <Navbar/>
       <RainbowDivider/>
-      <div className="container px-5 mx-auto mt-6">
+      <Seo
+        title={`Blog | ${site.siteName}`}
+        description={site.descriptions.blog}
+        path="/blog/"
+        jsonLd={jsonLd}
+      />
+      <main className="container px-5 mx-auto mt-6">
         <h1 className="text-2xl text-[50px] font-extrabold font-sans leading-normal">All Posts</h1>
         <p className="leading-normal">I may write something interesting, no promises though. I
           just write about what interests me at the time 🎓💡</p>
         <ArticleList posts={posts}/>
-      </div>
+      </main>
     </div>
-  );
-}
-
-function HtmlHead() {
-  return (
-    <Head>
-      <title>Matt D'Agostino Portfolio</title>
-      <meta
-        property="og:title"
-        content="Matt D'Agostino Portfolio Website"
-        key="title"
-      />
-      <meta
-        property="og:description"
-        content="Hi! I'm Matt D'Agostino and this is my portfolio website."
-        key="description"
-      />
-    </Head>
   );
 }
 

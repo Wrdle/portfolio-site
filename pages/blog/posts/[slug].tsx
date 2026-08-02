@@ -10,6 +10,8 @@ import {getAllPosts, getPostBySlug} from "@lib/Articles";
 import {ArticleDTO} from "@lib/model/ArticleDTO";
 import {MDXRemoteSerializeResult} from "next-mdx-remote";
 import Comments from "@components/Comments";
+import Seo from "@components/Seo";
+import {absoluteAssetUrl, personSchemaId, postPath, postUrl, site} from "@lib/siteMetadata";
 
 // Extended DTO for page props (content is serialized MDX)
 export interface SerializedArticleDTO extends ArticleDTO {
@@ -27,14 +29,46 @@ export default function Post({post}: PostPageProps) {
         return <ErrorPage statusCode={404}/>;
     }
 
+    const url = postUrl(post.slug);
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: post.title,
+        description: post.excerpt,
+        url,
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": url,
+        },
+        author: {"@id": personSchemaId},
+        publisher: {"@id": personSchemaId},
+        datePublished: post.publishedDate,
+        ...(post.modifiedDate ? {dateModified: post.modifiedDate} : {}),
+        ...(post.image ? {image: absoluteAssetUrl(post.image)} : {}),
+    };
+
     return (
         <div className="bg-[#10101a] min-h-screen">
+            <Seo
+                title={`${post.title} | ${site.siteName}`}
+                description={post.excerpt}
+                path={postPath(post.slug)}
+                type="article"
+                image={post.image}
+                imageAlt={post.image ? post.title : undefined}
+                article={{
+                    publishedDate: post.publishedDate,
+                    modifiedDate: post.modifiedDate,
+                }}
+                jsonLd={jsonLd}
+            />
             <Navbar/>
             <RainbowDivider/>
-            <div className="container mx-auto pb-5 px-5">
+            <main className="container mx-auto pb-5 px-5">
                 <BlogArticle article={post}/>
                 <Comments/>
-            </div>
+            </main>
         </div>
     );
 }

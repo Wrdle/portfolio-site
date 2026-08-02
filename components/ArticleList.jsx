@@ -6,9 +6,9 @@ export default function ArticleList({posts}) {
   }
 
   return (
-    <div className="space-y-2">
-      {posts.map((post, index) => <Post post={post} key={index}/>)}
-    </div>
+    <ul className="space-y-2 list-none p-0">
+      {posts.map((post) => <Post post={post} key={post.slug}/>)}
+    </ul>
   );
 }
 
@@ -23,13 +23,13 @@ function NoArticlesYet() {
 
 function Post({post}) {
   return (
-    <div>
+    <li>
       <br/>
-      <a href={"/blog/posts/" + post.slug}>
-        <p className="text-gray-400">{post.formattedDate} – ☕ {post.readingTimeText}</p>
-        <h1 className="text-3xl font-extrabold my-1.5 underline decoration-sky-500 hover:decoration-4">{post.title}</h1>
+      <a href={`/blog/posts/${post.slug}/`}>
+        <p className="text-gray-400"><time dateTime={post.publishedDate}>{post.formattedDate}</time> – ☕ {post.readingTimeText}</p>
+        <h2 className="text-3xl font-extrabold my-1.5 underline decoration-sky-500 hover:decoration-4">{post.title}</h2>
         <p>{post.excerpt}</p>
       </a>
-    </div>
+    </li>
   );
 }
