@@ -1,17 +1,25 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@lib/*": ["lib/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@public/*": ["public/*"]
+      "@components/*": [
+        "./components/*"
+      ],
+      "@lib/*": [
+        "./lib/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ],
+      "@styles/*": [
+        "./styles/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ]
     },
-    "target": "es5",
+    "target": "es2022",
     "lib": [
       "dom",
-      "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
@@ -24,8 +32,11 @@
     "module": "esnext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "moduleResolution":"node",
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "next-env.d.ts",

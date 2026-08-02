@@ -70,7 +70,7 @@ const AboutMe: FC = () => {
           </div>
           <div className="basis-full lg:basis-1/2 relative min-h-[250px]">
             <Image
-                priority
+                preload
                 src="/static/programming-orange.svg"
                 fill
                 alt="Programming picture"

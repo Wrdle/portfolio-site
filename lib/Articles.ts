@@ -1,5 +1,5 @@
 import {join} from "path";
-import matter from "gray-matter";
+import matter from "@11ty/gray-matter";
 import {Article} from "./model/Article";
 import * as fs from "fs";
 import {parse} from "date-fns";
